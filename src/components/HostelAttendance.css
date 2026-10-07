@@ -309,6 +309,60 @@ button {
   border-radius: 18px;
   overflow: hidden;
 }
+/* ================= COMPACT ROOMS ================= */
+
+.room-card {
+  border-radius: 14px;
+}
+
+.room-header {
+  padding: 11px 15px;
+}
+
+.student-list {
+  padding: 2px 15px;
+}
+
+.student-row {
+  padding: 9px 0;
+  gap: 10px;
+}
+
+.student-info {
+  gap: 9px;
+}
+
+.avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 9px;
+  font-size: 12px;
+}
+
+.student-info strong {
+  font-size: 12px;
+}
+
+.student-info span {
+  font-size: 9px;
+  margin-top: 2px;
+}
+
+.attendance-actions {
+  gap: 5px;
+}
+
+.attendance-actions button {
+  padding: 7px 10px;
+  border-radius: 8px;
+  font-size: 10px;
+}
+
+.saved-remark {
+  margin-top: -2px;
+  padding: 7px 10px;
+  font-size: 10px;
+}
 
 .room-header {
   display: flex;
@@ -522,46 +576,446 @@ button {
 
 /* Mobile */
 
+/* ================= MOBILE ================= */
+
 @media (max-width: 700px) {
-  .hero {
-    flex-direction: column;
-    align-items: flex-start;
+
+  body {
+    overflow-x: hidden;
   }
 
-  .date-card {
+  .attendance-page {
     width: 100%;
+    overflow-x: hidden;
   }
 
-  .status-card {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 20px;
+  /* Navbar */
+
+  .navbar {
+    height: 62px;
+    padding: 0 16px;
   }
 
-  .stats {
-    grid-template-columns: repeat(2, 1fr);
+  .nav-brand {
+    gap: 9px;
   }
 
-  .section-header {
-    align-items: flex-start;
-    gap: 15px;
-    flex-direction: column;
+  .brand-icon {
+    width: 34px;
+    height: 34px;
+    border-radius: 10px;
+    font-size: 13px;
   }
 
-  .student-row {
-    grid-template-columns: 1fr;
+  .nav-brand h2 {
+    font-size: 15px;
   }
 
-  .attendance-actions {
-    width: 100%;
-  }
-
-  .attendance-actions button {
-    flex: 1;
+  .nav-brand span {
+    font-size: 9px;
   }
 
   .nav-right {
     display: none;
+  }
+
+  /* Main */
+
+  .attendance-container {
+    width: calc(100% - 28px);
+    padding: 28px 0 50px;
+  }
+
+  /* Hero */
+
+  .hero {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 18px;
+    margin-bottom: 20px;
+  }
+
+  .eyebrow {
+    font-size: 9px;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+  }
+
+  .hero h1 {
+    font-size: 34px;
+    letter-spacing: -1.5px;
+    line-height: 1.05;
+  }
+
+  .hero p {
+    font-size: 12px;
+    margin-top: 10px;
+    line-height: 1.5;
+  }
+
+  .date-card {
+    width: 100%;
+    min-width: 0;
+    padding: 13px 15px;
+    border-radius: 14px;
+  }
+
+  .date-card strong {
+    margin: 5px 0;
+    font-size: 13px;
+  }
+
+  /* Status */
+
+  .status-card {
+    padding: 14px;
+    border-radius: 15px;
+    margin-bottom: 16px;
+
+    flex-direction: column;
+    align-items: stretch;
+    gap: 13px;
+  }
+
+  .status-left {
+    gap: 9px;
+  }
+
+  .status-indicator {
+    width: 9px;
+    height: 9px;
+    flex-shrink: 0;
+  }
+
+  .status-left strong {
+    font-size: 12px;
+  }
+
+  .status-left p {
+    font-size: 10px;
+    margin-top: 3px;
+  }
+
+  .time-window {
+    width: 100%;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .time-window div:not(.arrow) {
+    text-align: left;
+  }
+
+  .time-window span {
+    font-size: 8px;
+  }
+
+  .time-window b {
+    font-size: 11px;
+  }
+
+  /* Stats */
+
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    margin-bottom: 28px;
+  }
+
+  .stat-card {
+    padding: 13px;
+    border-radius: 13px;
+  }
+
+  .stat-card span {
+    font-size: 9px;
+  }
+
+  .stat-card strong {
+    font-size: 23px;
+    margin-top: 4px;
+  }
+
+  /* Section Header */
+
+  .section-header {
+    margin-bottom: 12px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 8px;
+  }
+
+  .section-header h2 {
+    font-size: 17px;
+  }
+
+  .section-header p {
+    font-size: 9px;
+    margin-top: 3px;
+  }
+
+  /* Report button */
+
+  .report-btn,
+  .report-button {
+    min-width: auto;
+    height: 38px;
+
+    padding: 0 12px;
+
+    border-radius: 10px;
+
+    font-size: 10px;
+    gap: 6px;
+
+    flex-shrink: 0;
+  }
+
+  .report-btn-icon {
+    width: 21px;
+    height: 21px;
+    border-radius: 6px;
+    font-size: 13px;
+  }
+
+  /* Rooms */
+
+  .rooms {
+    gap: 8px;
+  }
+
+  .room-card {
+    border-radius: 13px;
+  }
+
+  .room-header {
+    padding: 9px 12px;
+  }
+
+  .room-number {
+    gap: 6px;
+  }
+
+  .room-number span {
+    font-size: 8px;
+  }
+
+  .room-number strong {
+    font-size: 12px;
+  }
+
+  .room-status {
+    font-size: 8px;
+  }
+
+  /* Students */
+
+  .student-list {
+    padding: 1px 12px;
+  }
+
+  .student-row {
+    padding: 7px 0;
+
+    grid-template-columns: minmax(0, 1fr) auto;
+
+    gap: 7px;
+  }
+
+  .student-info {
+    min-width: 0;
+    gap: 8px;
+  }
+
+  .avatar {
+    width: 29px;
+    height: 29px;
+
+    flex-shrink: 0;
+
+    border-radius: 8px;
+
+    font-size: 10px;
+  }
+
+  .student-info strong {
+    font-size: 11px;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .student-info span {
+    font-size: 8px;
+    margin-top: 1px;
+  }
+
+  /* Attendance buttons */
+
+  .attendance-actions {
+    width: auto;
+    gap: 4px;
+  }
+
+  .attendance-actions button {
+    min-width: 52px;
+
+    padding: 6px 7px;
+
+    border-radius: 7px;
+
+    font-size: 9px;
+  }
+
+  /* Remark */
+
+  .saved-remark {
+    grid-column: 1 / -1;
+
+    margin-top: -2px;
+
+    padding: 6px 8px;
+
+    border-radius: 7px;
+
+    font-size: 9px;
+
+    line-height: 1.35;
+  }
+
+  /* Remark Modal */
+
+  .modal-overlay {
+    padding: 14px;
+  }
+
+  .remark-modal {
+    width: 100%;
+
+    padding: 23px 18px;
+
+    border-radius: 18px;
+  }
+
+  .modal-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+  }
+
+  .remark-modal h2 {
+    font-size: 18px;
+  }
+
+  .remark-modal p {
+    font-size: 11px;
+  }
+
+  .remark-modal textarea {
+    font-size: 13px;
+    min-height: 90px;
+  }
+
+  .save-remark {
+    padding: 11px;
+    font-size: 12px;
+  }
+
+  /* Password Modal */
+
+  .password-overlay {
+    padding: 14px !important;
+  }
+
+  .password-modal {
+    width: 100%;
+    max-width: 360px;
+
+    padding: 25px 18px;
+
+    border-radius: 19px;
+  }
+
+  .password-icon {
+    width: 52px;
+    height: 52px;
+
+    margin-bottom: 13px;
+
+    border-radius: 14px;
+
+    font-size: 23px;
+  }
+
+  .password-modal h2 {
+    font-size: 19px;
+  }
+
+  .password-modal p {
+    font-size: 11px;
+    margin-bottom: 17px;
+  }
+
+  .password-modal input {
+    padding: 12px;
+
+    border-radius: 10px;
+
+    font-size: 13px;
+  }
+
+  .password-submit {
+    margin-top: 13px;
+    padding: 12px;
+
+    border-radius: 10px;
+
+    font-size: 13px;
+  }
+
+  .password-close {
+    width: 30px;
+    height: 30px;
+
+    top: 10px;
+    right: 10px;
+
+    font-size: 20px;
+  }
+}
+@media (max-width: 380px) {
+
+  .attendance-container {
+    width: calc(100% - 20px);
+  }
+
+  .hero h1 {
+    font-size: 30px;
+  }
+
+  .student-row {
+    gap: 5px;
+  }
+
+  .attendance-actions button {
+    min-width: 46px;
+    padding: 6px 5px;
+    font-size: 8px;
+  }
+
+  .student-info strong {
+    font-size: 10px;
+  }
+
+  .report-btn,
+  .report-button {
+    padding: 0 9px;
+    font-size: 9px;
   }
 }
 
